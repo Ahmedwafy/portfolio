@@ -65,7 +65,7 @@ export function ContactForm() {
           {...register("name")}
         />
         {errors.name && (
-          <p className="mt-1.5 text-xs text-red-400">{errors.name.message}</p>
+          <p className="mt-1.5 text-xs text-red-600 dark:text-red-400">{errors.name.message}</p>
         )}
       </div>
 
@@ -84,7 +84,7 @@ export function ContactForm() {
           {...register("email")}
         />
         {errors.email && (
-          <p className="mt-1.5 text-xs text-red-400">
+          <p className="mt-1.5 text-xs text-red-600 dark:text-red-400">
             {errors.email.message}
           </p>
         )}
@@ -105,7 +105,7 @@ export function ContactForm() {
           {...register("message")}
         />
         {errors.message && (
-          <p className="mt-1.5 text-xs text-red-400">
+          <p className="mt-1.5 text-xs text-red-600 dark:text-red-400">
             {errors.message.message}
           </p>
         )}
@@ -125,7 +125,7 @@ export function ContactForm() {
         </p>
       )}
       {status === "error" && (
-        <p className="font-mono text-xs text-red-400">{errorMessage}</p>
+        <p className="font-mono text-xs text-red-600 dark:text-red-400">{errorMessage}</p>
       )}
     </form>
   );
