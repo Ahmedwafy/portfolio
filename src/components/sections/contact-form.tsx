@@ -46,16 +46,16 @@ export function ContactForm() {
   };
 
   const inputClass =
-    "w-full border border-border bg-transparent px-4 py-3 text-sm text-text-primary placeholder:text-text-muted focus:border-accent focus:outline-none";
+    "w-full rounded-2xl border border-border bg-bg px-4 py-3.5 text-base text-text-primary placeholder:text-text-muted focus:border-coral focus:outline-none focus:ring-2 focus:ring-coral-soft transition-colors";
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-5">
       <div>
         <label
           htmlFor="name"
-          className="mb-2 block font-mono text-xs tracking-[0.15em] text-text-muted"
+          className="mb-2 block text-sm font-semibold text-text-secondary"
         >
-          NAME
+          Name
         </label>
         <input
           id="name"
@@ -65,16 +65,16 @@ export function ContactForm() {
           {...register("name")}
         />
         {errors.name && (
-          <p className="mt-1.5 text-xs text-red-600 dark:text-red-400">{errors.name.message}</p>
+          <p className="mt-1.5 text-sm text-red-600 dark:text-red-400">{errors.name.message}</p>
         )}
       </div>
 
       <div>
         <label
           htmlFor="email"
-          className="mb-2 block font-mono text-xs tracking-[0.15em] text-text-muted"
+          className="mb-2 block text-sm font-semibold text-text-secondary"
         >
-          EMAIL
+          Email
         </label>
         <input
           id="email"
@@ -84,7 +84,7 @@ export function ContactForm() {
           {...register("email")}
         />
         {errors.email && (
-          <p className="mt-1.5 text-xs text-red-600 dark:text-red-400">
+          <p className="mt-1.5 text-sm text-red-600 dark:text-red-400">
             {errors.email.message}
           </p>
         )}
@@ -93,9 +93,9 @@ export function ContactForm() {
       <div>
         <label
           htmlFor="message"
-          className="mb-2 block font-mono text-xs tracking-[0.15em] text-text-muted"
+          className="mb-2 block text-sm font-semibold text-text-secondary"
         >
-          MESSAGE
+          Message
         </label>
         <textarea
           id="message"
@@ -105,7 +105,7 @@ export function ContactForm() {
           {...register("message")}
         />
         {errors.message && (
-          <p className="mt-1.5 text-xs text-red-600 dark:text-red-400">
+          <p className="mt-1.5 text-sm text-red-600 dark:text-red-400">
             {errors.message.message}
           </p>
         )}
@@ -114,18 +114,18 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="border border-accent px-6 py-3 font-mono text-xs tracking-[0.15em] text-accent transition-colors hover:bg-accent hover:text-bg disabled:opacity-50"
+        className="rounded-full bg-coral px-7 py-3.5 text-base font-semibold text-white transition-transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:hover:scale-100"
       >
-        {status === "submitting" ? "SENDING…" : "SEND MESSAGE"}
+        {status === "submitting" ? "Sending…" : "Send message"}
       </button>
 
       {status === "success" && (
-        <p className="font-mono text-xs text-teal">
+        <p className="text-sm font-semibold text-teal">
           Message sent. I&apos;ll get back to you soon.
         </p>
       )}
       {status === "error" && (
-        <p className="font-mono text-xs text-red-600 dark:text-red-400">{errorMessage}</p>
+        <p className="text-sm font-semibold text-red-600 dark:text-red-400">{errorMessage}</p>
       )}
     </form>
   );

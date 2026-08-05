@@ -20,9 +20,9 @@ export function MobileNav() {
         onClick={() => setOpen((v) => !v)}
         aria-label={open ? "Close menu" : "Open menu"}
         aria-expanded={open}
-        className="flex h-9 w-9 items-center justify-center border border-border text-text-secondary transition-colors hover:border-accent hover:text-accent"
+        className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-text-secondary transition-colors hover:border-coral hover:text-coral"
       >
-        {open ? <X size={16} /> : <Menu size={16} />}
+        {open ? <X size={18} /> : <Menu size={18} />}
       </button>
 
       <AnimatePresence>
@@ -40,9 +40,9 @@ export function MobileNav() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="border-b border-border py-3 font-mono text-xs tracking-[0.15em] text-text-secondary transition-colors last:border-b-0 hover:text-accent"
+                  className="rounded-2xl px-4 py-3 text-base font-semibold text-text-secondary transition-colors hover:bg-coral-soft hover:text-coral"
                 >
-                  {link.label.toUpperCase()}
+                  {link.label}
                 </a>
               ))}
             </div>

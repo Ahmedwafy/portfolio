@@ -7,12 +7,12 @@ export function Projects({ projects }: { projects: Project[] }) {
   if (projects.length === 0) return null;
 
   return (
-    <section id="projects" className="border-b border-border py-24">
+    <section id="projects" className="border-t border-border py-28">
       <div className="mx-auto max-w-5xl px-6">
         <Reveal>
-          <SectionLabel number="03" label="Work" />
-          <h2 className="mb-10 max-w-lg font-display text-2xl font-medium text-text-primary sm:text-3xl">
-            Selected projects
+          <SectionLabel label="Selected work" />
+          <h2 className="mb-12 max-w-lg font-display text-4xl font-bold text-text-primary sm:text-5xl">
+            Things I&rsquo;ve built
           </h2>
         </Reveal>
 

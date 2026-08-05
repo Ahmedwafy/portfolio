@@ -3,29 +3,39 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --bg: #F3F2ED;
-  --bg-panel: #E9E7DE;
-  --text-primary: #1B1D27;
-  --text-secondary: #5B6070;
-  --text-muted: #8A8F9E;
-  --accent: #B8791A;
-  --accent-soft: #F0E2CB;
-  --teal: #1E9E8D;
-  --border: #D8D5C9;
-  --border-strong: #C3BFAF;
+  --bg: #FBF4EC;
+  --bg-panel: #FFFFFF;
+  --text-primary: #241A14;
+  --text-secondary: #6B5B4E;
+  --text-muted: #9C8C7E;
+
+  --coral: #E1552F;
+  --coral-soft: #FBE4DA;
+  --gold: #C9781E;
+  --gold-soft: #FBEBD2;
+  --teal: #17877A;
+  --teal-soft: #D9F0EA;
+
+  --border: #EBDFCF;
+  --border-strong: #DDC9AE;
 }
 
 .dark {
-  --bg: #14161F;
-  --bg-panel: #1C2033;
-  --text-primary: #EDEAE3;
-  --text-secondary: #ADB2C4;
-  --text-muted: #8A90A6;
-  --accent: #E8A23D;
-  --accent-soft: #2E2717;
+  --bg: #161A26;
+  --bg-panel: #1E2433;
+  --text-primary: #F3EFE8;
+  --text-secondary: #B9BAC7;
+  --text-muted: #868A9C;
+
+  --coral: #F0764F;
+  --coral-soft: #33262A;
+  --gold: #EAAB55;
+  --gold-soft: #332C1F;
   --teal: #4FD1C5;
-  --border: #262A3D;
-  --border-strong: #363B54;
+  --teal-soft: #163038;
+
+  --border: #2A3040;
+  --border-strong: #3A4155;
 }
 
 @theme inline {
@@ -34,14 +44,19 @@
   --color-text-primary: var(--text-primary);
   --color-text-secondary: var(--text-secondary);
   --color-text-muted: var(--text-muted);
-  --color-accent: var(--accent);
-  --color-accent-soft: var(--accent-soft);
+
+  --color-coral: var(--coral);
+  --color-coral-soft: var(--coral-soft);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
   --color-teal: var(--teal);
+  --color-teal-soft: var(--teal-soft);
+
   --color-border: var(--border);
   --color-border-strong: var(--border-strong);
 
-  --font-display: var(--font-space-grotesk);
-  --font-sans: var(--font-plex-sans);
+  --font-display: var(--font-sora);
+  --font-sans: var(--font-jakarta);
   --font-mono: var(--font-plex-mono);
 }
 
@@ -49,6 +64,12 @@ body {
   background: var(--bg);
   color: var(--text-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+* {
+  transition-property: color, background-color, border-color, fill, stroke;
+  transition-duration: 0.35s;
+  transition-timing-function: ease;
 }
 
 @media (prefers-reduced-motion: reduce) {

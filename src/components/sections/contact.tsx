@@ -1,26 +1,25 @@
 import type { Person } from "@/types/sanity";
 import { SectionLabel } from "@/components/ui/section-label";
-import { BracketFrame } from "@/components/ui/bracket-frame";
 import { Reveal } from "@/components/ui/reveal";
 import { SocialIcon } from "@/components/ui/social-icon";
 import { ContactForm } from "./contact-form";
 
 export function Contact({ person }: { person: Person }) {
   return (
-    <section id="contact" className="border-b border-border py-24">
+    <section id="contact" className="border-t border-border py-28">
       <div className="mx-auto max-w-5xl px-6">
         <Reveal>
-          <SectionLabel number="05" label="Contact" />
-          <h2 className="mb-10 max-w-lg font-display text-2xl font-medium text-text-primary sm:text-3xl">
-            Have a project in mind, or just want to say hi?
+          <SectionLabel label="Get in touch" />
+          <h2 className="mb-12 max-w-lg font-display text-4xl font-bold text-text-primary sm:text-5xl">
+            Have a project in mind?
           </h2>
         </Reveal>
 
         <div className="grid gap-8 md:grid-cols-[1.4fr_1fr]">
           <Reveal delay={0.1}>
-            <BracketFrame>
+            <div className="rounded-3xl border border-border bg-bg-panel p-8">
               <ContactForm />
-            </BracketFrame>
+            </div>
           </Reveal>
 
           {person.socialLinks && person.socialLinks.length > 0 && (
@@ -32,7 +31,7 @@ export function Contact({ person }: { person: Person }) {
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 border border-border px-4 py-3 text-sm text-text-secondary transition-colors hover:border-accent hover:text-accent"
+                    className="flex items-center gap-3 rounded-2xl border border-border bg-bg-panel px-5 py-4 text-base font-semibold text-text-secondary transition-colors hover:border-coral hover:text-coral"
                   >
                     <SocialIcon platform={link.platform} />
                     {link.platform}

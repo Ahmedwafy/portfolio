@@ -15,7 +15,7 @@ const components: PortableTextComponents = {
         href={value?.href}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-accent underline underline-offset-4 hover:text-accent/80"
+        className="text-coral underline underline-offset-4 hover:text-coral/80"
       >
         {children}
       </a>

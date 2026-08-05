@@ -1,15 +1,7 @@
-export function SectionLabel({
-  number,
-  label,
-}: {
-  number: string;
-  label: string;
-}) {
+export function SectionLabel({ label }: { number?: string; label: string }) {
   return (
-    <div className="mb-4 flex items-center gap-3 font-mono text-xs tracking-[0.2em] text-text-muted">
-      <span className="text-accent">SEC.{number}</span>
-      <span className="h-px flex-1 max-w-8 bg-border-strong" />
-      <span>{label.toUpperCase()}</span>
+    <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-coral-soft px-4 py-1.5 text-sm font-semibold text-coral">
+      {label}
     </div>
   );
 }
