@@ -6,11 +6,12 @@ import type { Metadata } from "next";
 import { ArrowLeft } from "lucide-react";
 import { getPerson, getProjectBySlug, getProjectSlugs } from "@/sanity/fetchers";
 import { Nav } from "@/components/layout/nav";
+import { TechIcon } from "@/components/ui/tech-icon";
 
 const TAG_STYLES = [
-  "bg-coral-soft text-coral",
-  "bg-gold-soft text-gold",
-  "bg-teal-soft text-teal",
+  "bg-accent-soft text-accent",
+  "bg-accent-2-soft text-accent-2",
+  "bg-accent-3-soft text-accent-3",
 ];
 
 export async function generateStaticParams() {
@@ -50,7 +51,7 @@ export default async function ProjectPage({
       <main className="mx-auto max-w-3xl px-6 py-20">
         <Link
           href="/#projects"
-          className="mb-10 inline-flex items-center gap-2 text-sm font-semibold text-text-muted transition-colors hover:text-coral"
+          className="mb-10 inline-flex items-center gap-2 text-sm font-semibold text-text-muted transition-colors hover:text-accent"
         >
           <ArrowLeft size={16} />
           Back to work
@@ -69,7 +70,7 @@ export default async function ProjectPage({
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full bg-coral px-6 py-3 text-sm font-semibold text-white transition-transform hover:scale-[1.02]"
+              className="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white transition-transform hover:scale-[1.02]"
             >
               Live demo ↗
             </a>
@@ -79,7 +80,7 @@ export default async function ProjectPage({
               href={project.repoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full border-2 border-border-strong px-6 py-3 text-sm font-semibold text-text-primary transition-colors hover:border-coral hover:text-coral"
+              className="rounded-full border-2 border-border-strong px-6 py-3 text-sm font-semibold text-text-primary transition-colors hover:border-accent hover:text-accent"
             >
               Source code ↗
             </a>
@@ -130,8 +131,9 @@ export default async function ProjectPage({
             {project.techStack.map((tech, i) => (
               <span
                 key={tech}
-                className={`rounded-full px-3 py-1.5 text-sm font-semibold ${TAG_STYLES[i % TAG_STYLES.length]}`}
+                className={`flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-semibold ${TAG_STYLES[i % TAG_STYLES.length]}`}
               >
+                <TechIcon name={tech} size={14} />
                 {tech}
               </span>
             ))}

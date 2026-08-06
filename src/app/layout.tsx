@@ -3,7 +3,6 @@ import { Sora, Plus_Jakarta_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { getPerson } from "@/sanity/fetchers";
 import { ThemeProvider } from "@/components/theme/theme-provider";
-import { AccentSwitcher } from "@/components/theme/accent-switcher";
 
 const sora = Sora({
   variable: "--font-sora",
@@ -73,10 +72,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col font-sans bg-bg text-text-primary">
-        <ThemeProvider>
-          {children}
-          <AccentSwitcher />
-        </ThemeProvider>
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );

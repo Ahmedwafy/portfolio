@@ -13,7 +13,7 @@ export function Hero({ person }: { person: Person }) {
   return (
     <section
       id="home"
-      className="relative flex min-h-[88vh] items-center overflow-hidden"
+      className="relative flex min-h-[88vh] items-center overflow-hidden pt-20"
     >
       <ConstellationBackground density={45} />
       <div
@@ -31,9 +31,9 @@ export function Hero({ person }: { person: Person }) {
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="mb-6 inline-flex items-center gap-2 rounded-full bg-teal-soft px-4 py-2 text-sm font-semibold text-teal"
+            className="mb-6 inline-flex items-center gap-2 rounded-full bg-accent-3-soft px-4 py-2 text-sm font-semibold text-accent-3"
           >
-            <span className="h-2 w-2 rounded-full bg-teal" />
+            <span className="h-2 w-2 rounded-full bg-accent-3" />
             {eyebrow}
           </motion.div>
         )}
@@ -66,13 +66,13 @@ export function Hero({ person }: { person: Person }) {
         >
           <a
             href="#projects"
-            className="rounded-full bg-coral px-7 py-3.5 text-base font-semibold text-white transition-transform hover:scale-[1.03] active:scale-[0.98]"
+            className="rounded-full bg-accent px-7 py-3.5 text-base font-semibold text-white transition-transform hover:scale-[1.03] active:scale-[0.98]"
           >
             View work
           </a>
           <a
             href="#contact"
-            className="rounded-full border-2 border-border-strong px-7 py-3.5 text-base font-semibold text-text-primary transition-colors hover:border-coral hover:text-coral"
+            className="rounded-full border-2 border-border-strong px-7 py-3.5 text-base font-semibold text-text-primary transition-colors hover:border-accent hover:text-accent"
           >
             Contact
           </a>
@@ -81,7 +81,7 @@ export function Hero({ person }: { person: Person }) {
               href={person.resumeUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-base font-semibold text-text-muted underline decoration-border-strong underline-offset-4 transition-colors hover:text-coral"
+              className="text-base font-semibold text-text-muted underline decoration-border-strong underline-offset-4 transition-colors hover:text-accent"
             >
               Resume ↗
             </a>
@@ -102,7 +102,7 @@ export function Hero({ person }: { person: Person }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={link.platform}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-text-secondary transition-colors hover:border-coral hover:text-coral"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-text-secondary transition-colors hover:border-accent hover:text-accent"
               >
                 <SocialIcon platform={link.platform} />
               </a>

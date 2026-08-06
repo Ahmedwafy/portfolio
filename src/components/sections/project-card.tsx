@@ -4,11 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import type { Project } from "@/types/sanity";
+import { TechIcon } from "@/components/ui/tech-icon";
 
 const TAG_STYLES = [
-  "bg-coral-soft text-coral",
-  "bg-gold-soft text-gold",
-  "bg-teal-soft text-teal",
+  "bg-accent-soft text-accent",
+  "bg-accent-2-soft text-accent-2",
+  "bg-accent-3-soft text-accent-3",
 ];
 
 export function ProjectCard({ project }: { project: Project }) {
@@ -20,8 +21,12 @@ export function ProjectCard({ project }: { project: Project }) {
     >
       <Link
         href={`/projects/${project.slug}`}
-        className="group flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-bg-panel"
+        className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-bg-panel"
       >
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-accent/20 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100"
+        />
         <div className="relative aspect-[16/10] w-full overflow-hidden">
           <Image
             src={project.coverImage.asset.url}
@@ -31,7 +36,7 @@ export function ProjectCard({ project }: { project: Project }) {
             className="object-cover transition-transform duration-500 group-hover:scale-105"
           />
         </div>
-        <div className="flex flex-1 flex-col p-6">
+        <div className="relative flex flex-1 flex-col p-6">
           <h3 className="mb-2 font-display text-xl font-bold text-text-primary">
             {project.title}
           </h3>
@@ -42,8 +47,9 @@ export function ProjectCard({ project }: { project: Project }) {
             {project.techStack.slice(0, 4).map((tech, i) => (
               <span
                 key={tech}
-                className={`rounded-full px-3 py-1 text-xs font-semibold ${TAG_STYLES[i % TAG_STYLES.length]}`}
+                className={`flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold ${TAG_STYLES[i % TAG_STYLES.length]}`}
               >
+                <TechIcon name={tech} size={12} />
                 {tech}
               </span>
             ))}

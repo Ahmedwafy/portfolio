@@ -6,14 +6,14 @@ import { useTheme } from "@/components/theme/theme-provider";
 
 const PALETTES = {
   light: [
-    { fill: "#FBE4DA", text: "#8A3418" },
-    { fill: "#FBEBD2", text: "#7A4E0E" },
-    { fill: "#D9F0EA", text: "#0E5248" },
+    { fill: "#E0EBFB", text: "#2268C3" },
+    { fill: "#E4E5FB", text: "#2426A8" },
+    { fill: "#F7ECDE", text: "#9E6D2E" },
   ],
   dark: [
-    { fill: "#33262A", text: "#F0B199" },
-    { fill: "#332C1F", text: "#F0CE99" },
-    { fill: "#163038", text: "#8FE5D9" },
+    { fill: "#16263B", text: "#5194EC" },
+    { fill: "#1A1B3D", text: "#7476E7" },
+    { fill: "#32281A", text: "#DBA257" },
   ],
 };
 

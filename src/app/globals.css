@@ -3,39 +3,39 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --bg: #FBF4EC;
-  --bg-panel: #FFFFFF;
-  --text-primary: #241A14;
-  --text-secondary: #6B5B4E;
-  --text-muted: #9C8C7E;
+  --bg: hsl(214, 35%, 97%);
+  --bg-panel: hsl(214, 25%, 99%);
+  --text-primary: hsl(214, 30%, 11%);
+  --text-secondary: hsl(214, 15%, 34%);
+  --text-muted: hsl(214, 10%, 52%);
 
-  --coral: #E1552F;
-  --coral-soft: #FBE4DA;
-  --gold: #C9781E;
-  --gold-soft: #FBEBD2;
-  --teal: #17877A;
-  --teal-soft: #D9F0EA;
+  --accent: hsl(214, 70%, 45%);
+  --accent-soft: hsl(214, 75%, 93%);
+  --accent-2: hsl(239, 65%, 40%);
+  --accent-2-soft: hsl(239, 75%, 94%);
+  --accent-3: hsl(34, 55%, 40%);
+  --accent-3-soft: hsl(34, 60%, 92%);
 
-  --border: #EBDFCF;
-  --border-strong: #DDC9AE;
+  --border: hsl(214, 25%, 88%);
+  --border-strong: hsl(214, 25%, 78%);
 }
 
 .dark {
-  --bg: #161A26;
-  --bg-panel: #1E2433;
-  --text-primary: #F3EFE8;
-  --text-secondary: #B9BAC7;
-  --text-muted: #868A9C;
+  --bg: hsl(214, 40%, 6%);
+  --bg-panel: hsl(214, 32%, 10%);
+  --text-primary: hsl(214, 20%, 95%);
+  --text-secondary: hsl(214, 14%, 76%);
+  --text-muted: hsl(214, 10%, 56%);
 
-  --coral: #F0764F;
-  --coral-soft: #33262A;
-  --gold: #EAAB55;
-  --gold-soft: #332C1F;
-  --teal: #4FD1C5;
-  --teal-soft: #163038;
+  --accent: hsl(214, 80%, 62%);
+  --accent-soft: hsl(214, 45%, 16%);
+  --accent-2: hsl(239, 70%, 68%);
+  --accent-2-soft: hsl(239, 40%, 17%);
+  --accent-3: hsl(34, 65%, 60%);
+  --accent-3-soft: hsl(34, 32%, 15%);
 
-  --border: #2A3040;
-  --border-strong: #3A4155;
+  --border: hsl(214, 28%, 17%);
+  --border-strong: hsl(214, 28%, 24%);
 }
 
 @theme inline {
@@ -45,12 +45,12 @@
   --color-text-secondary: var(--text-secondary);
   --color-text-muted: var(--text-muted);
 
-  --color-coral: var(--coral);
-  --color-coral-soft: var(--coral-soft);
-  --color-gold: var(--gold);
-  --color-gold-soft: var(--gold-soft);
-  --color-teal: var(--teal);
-  --color-teal-soft: var(--teal-soft);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-2: var(--accent-2);
+  --color-accent-2-soft: var(--accent-2-soft);
+  --color-accent-3: var(--accent-3);
+  --color-accent-3-soft: var(--accent-3-soft);
 
   --color-border: var(--border);
   --color-border-strong: var(--border-strong);
@@ -61,7 +61,9 @@
 }
 
 body {
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image: radial-gradient(circle, var(--border-strong) 1px, transparent 1px);
+  background-size: 28px 28px;
   color: var(--text-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
 }

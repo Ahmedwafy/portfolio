@@ -13,8 +13,8 @@ interface Node {
 }
 
 const PALETTES = {
-  light: ["#E1552F", "#C9781E", "#17877A"],
-  dark: ["#F0764F", "#EAAB55", "#4FD1C5"],
+  light: ["#2268C3", "#2426A8", "#9E6D2E"],
+  dark: ["#5194EC", "#7476E7", "#DBA257"],
 };
 
 const CONNECT_DISTANCE = 130;

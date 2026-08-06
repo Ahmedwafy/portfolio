@@ -46,7 +46,7 @@ export function ContactForm() {
   };
 
   const inputClass =
-    "w-full rounded-2xl border border-border bg-bg px-4 py-3.5 text-base text-text-primary placeholder:text-text-muted focus:border-coral focus:outline-none focus:ring-2 focus:ring-coral-soft transition-colors";
+    "w-full rounded-2xl border border-border bg-bg px-4 py-3.5 text-base text-text-primary placeholder:text-text-muted focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent-soft transition-colors";
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-5">
@@ -114,13 +114,13 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="rounded-full bg-coral px-7 py-3.5 text-base font-semibold text-white transition-transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:hover:scale-100"
+        className="rounded-full bg-accent px-7 py-3.5 text-base font-semibold text-white transition-transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:hover:scale-100"
       >
         {status === "submitting" ? "Sending…" : "Send message"}
       </button>
 
       {status === "success" && (
-        <p className="text-sm font-semibold text-teal">
+        <p className="text-sm font-semibold text-accent-3">
           Message sent. I&apos;ll get back to you soon.
         </p>
       )}

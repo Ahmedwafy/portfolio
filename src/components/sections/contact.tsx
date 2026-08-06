@@ -31,7 +31,7 @@ export function Contact({ person }: { person: Person }) {
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 rounded-2xl border border-border bg-bg-panel px-5 py-4 text-base font-semibold text-text-secondary transition-colors hover:border-coral hover:text-coral"
+                    className="flex items-center gap-3 rounded-2xl border border-border bg-bg-panel px-5 py-4 text-base font-semibold text-text-secondary transition-colors hover:border-accent hover:text-accent"
                   >
                     <SocialIcon platform={link.platform} />
                     {link.platform}
