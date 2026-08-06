@@ -31,9 +31,7 @@ export function AccentSwitcher() {
             {OPTIONS.map((opt) => (
               <button
                 key={opt.id}
-                onClick={() =>
-                  setAccent((prev) => (prev === opt.id ? "default" : opt.id))
-                }
+                onClick={() => setAccent(accent === opt.id ? "default" : opt.id)}
                 aria-label={`${opt.label} theme`}
                 aria-pressed={accent === opt.id}
                 className="relative h-8 w-8 rounded-full transition-transform hover:scale-110"
